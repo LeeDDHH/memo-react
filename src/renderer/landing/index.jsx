@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Memo from './Memo/Memo'
 
 class App extends React.Component {
   render() {
     return (
-      <div>Hello world</div>
+      <div>
+        <Memo />
+      </div>
     )
   }
 }

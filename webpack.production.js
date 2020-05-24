@@ -49,6 +49,31 @@ module.exports = [
             },
           ],
         },
+        {
+          test: /\.(jpg|png)?$/,
+          loaders: "url-loader",
+        },
+        {
+          test: /\.css?$/,
+          use: [
+            {
+              loader: "style-loader",
+            },
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: true,
+              },
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                ident: "postcss",
+                plugins: [require("tailwindcss"), require("autoprefixer")],
+              },
+            },
+          ],
+        },
       ],
     },
     resolve: {
